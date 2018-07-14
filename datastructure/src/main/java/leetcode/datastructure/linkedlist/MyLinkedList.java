@@ -1,103 +1,133 @@
 package leetcode.datastructure.linkedlist;
 
-public class MyLinkedList
-{
 
+import java.util.StringJoiner;
 
-    private SinglyListNode head;
+public class MyLinkedList {
 
-    public MyLinkedList() {
+  private SinglyListNode head;
+
+  public int get(int index) {
+    SinglyListNode current = head;
+    int currentIndex = 0;
+    while (current != null) {
+      if (index == currentIndex) {
+        return current.val;
+      }
+      current = current.next;
+      currentIndex++;
+    }
+    return -1;
+  }
+
+  public SinglyListNode getNode(int index) {
+
+    if (index == 0) {
+      return head;
     }
 
-    public void addAtHead(int i) {
-        SinglyListNode newHeadNode = new SinglyListNode(i);
-        if (head == null) {
-            this.head = newHeadNode;
-        } else {
-            newHeadNode.next = head;
-            this.head = newHeadNode;
-        }
+    SinglyListNode current = head;
+    int currentIndex = 0;
+    while (current != null) {
+      if (index == currentIndex) {
+        return current;
+      }
+      current = current.next;
+      currentIndex++;
+    }
+    return null;
+  }
+
+  public void addAtHead(int val) {
+    if (this.head == null) {
+      this.head = new SinglyListNode(val);
+    } else {
+      SinglyListNode newHead = new SinglyListNode(val);
+      newHead.next = head;
+      this.head = newHead;
+    }
+  }
+
+  public void addAtTail(int val) {
+    if (this.head == null) {
+      this.head = new SinglyListNode(val);
+    } else {
+      SinglyListNode current = getLastNode();
+      current.next = new SinglyListNode(val);
+    }
+  }
+
+  public int getLostNodeVal() {
+    return getLastNode().val;
+  }
+
+  public SinglyListNode getLastNode() {
+    SinglyListNode current = head;
+
+    while (current.next != null) {
+      current = current.next;
     }
 
-    public void addAtTail(int i) {
-        if (head == null) {
-            this.head = new SinglyListNode(i);
-        } else {
-            getLastNode(head).next = new SinglyListNode(i);
-        }
+    return current;
+  }
+
+  public void addAtIndex(int index, int val) {
+    if (index == 0) {
+      addAtHead(val);
+    } else {
+      SinglyListNode previous = getNode(index - 1);
+      if (previous == null) {
+        return;
+      }
+      SinglyListNode current = getNode(index);
+      SinglyListNode newNode = new SinglyListNode(val);
+      previous.next = newNode;
+      newNode.next = current;
+    }
+  }
+
+  public void deleteAtIndex(int index) {
+    if (index == 0) {
+      if (head != null) {
+        head = head.next;
+      }
+    } else {
+      SinglyListNode previous = getNode(index - 1);
+      SinglyListNode next = getNode(index + 1);
+      previous.next = next;
     }
 
+  }
 
-    public int getTailValue() {
-        return getLastNode(head).getVal();
+  @Override
+  public String toString() {
+    SinglyListNode current = head;
+    int currentIndex = 0;
+    StringJoiner stringJoiner =
+        new StringJoiner(",", "{", "}");
+    while (current != null) {
+      stringJoiner.add(currentIndex + "=" + current.val);
+      current = current.next;
+      currentIndex++;
+    }
+    return stringJoiner.toString();
+  }
+
+  private class SinglyListNode {
+
+    int val;
+    private SinglyListNode next;
+
+    public SinglyListNode(int val) {
+      this.val = val;
     }
 
-    public SinglyListNode getLastNode(SinglyListNode head) {
-        if (head.next != null) {
-            return getLastNode(head.next);
-        } else {
-            return head;
-        }
+    public int getVal() {
+      return val;
     }
 
-    public void deleteAtIndex(int index) {
-        SinglyListNode previousNode = getNodeByIndex(index - 1);
-        SinglyListNode nextNode = getNodeByIndex(index);
-        previousNode.next = nextNode.next;
-        nextNode.next = null;
-    }
-
-    public void addAtIndex(int index, int value) {
-        SinglyListNode node = new SinglyListNode(value);
-        SinglyListNode previousNode = getNodeByIndex(index - 1);
-        SinglyListNode nextNode = getNodeByIndex(index);
-        previousNode.next = node;
-        node.next = nextNode;
-    }
-
-    private SinglyListNode getNodeByIndex(int index) {
-        if (index == 0) {
-            return head;
-        }
-
-        SinglyListNode currentNode = head;
-        int currentIndex = 0;
-
-        while (currentNode.next != null) {
-            currentNode = currentNode.next;
-            currentIndex++;
-            if (currentIndex == index) {
-                return currentNode;
-            }
-        }
-        return null;
-    }
-
-
-    public int get(int index) {
-        return getNodeByIndex(index)!= null?getNodeByIndex(index).getVal():0;
-    }
-
-
-    public int getHeadValue() {
-        return head.getVal();
-    }
-
-
-
-
-    private class SinglyListNode {
-
-        int val;
-        private SinglyListNode next;
-
-        public SinglyListNode(int val) {
-            this.val = val;
-        }
-
-        public int getVal() {
-            return val;
-        }
-    }
+  }
 }
+
+
 
