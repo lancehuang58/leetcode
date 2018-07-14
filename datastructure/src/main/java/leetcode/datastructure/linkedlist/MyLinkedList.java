@@ -122,7 +122,7 @@ public class MyLinkedList {
       this.val = val;
     }
 
-    public int getVal() {
+     int getVal() {
       return val;
     }
 
