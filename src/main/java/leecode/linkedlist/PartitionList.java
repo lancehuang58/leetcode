@@ -1,51 +1,29 @@
 package leecode.linkedlist;
 
-import java.util.List;
 import leecode.common.ListNode;
 
 public class PartitionList {
 
   public ListNode partition(ListNode head, int x) {
 
-    ListNode before = null;
-    ListNode after = null;
+    ListNode afterHead = new ListNode(0);
+    ListNode after = afterHead;
 
-    ListNode beforeP = new ListNode(1);
-    beforeP.next = before;
+    ListNode beforeHead = new ListNode(0);
+    ListNode before = beforeHead;
 
-    processNode(head, before, after, x);
-
-    beforeP.next.printNode();
-    System.out.println("============== = ");
-    after.printNode();
-
-    return head;
-  }
-
-  private void processNode(ListNode head, ListNode before, ListNode after, int x) {
-
-    if (head == null) {
-      return;
-    }else {
-      System.out.println("========== = ");
-      head.printNode();
-      System.out.println("========== = ");
-    }
-
-    if (head.val > x) {
-      if (before == null) {
-        before = new ListNode(head.val);
+    while (head != null) {
+      if (head.val >= x) {
+        after.next = head;
+        after = after.next;
       } else {
-        before.next = new ListNode(head.val);
+        before.next = head;
+        before = before.next;
       }
-    } else {
-      if (after == null) {
-        after = new ListNode(head.val);
-      } else {
-        after = new ListNode(head.val);
-      }
+      head = head.next;
     }
-    head = head.next;
-    processNode(head, before, after, x);
+    after.next = null;
+    before.next = afterHead.next;
+    return beforeHead.next;
   }
 }

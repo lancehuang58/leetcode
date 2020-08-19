@@ -1,13 +1,14 @@
 package leecode.common;
 
+import java.util.Arrays;
+import java.util.PrimitiveIterator.OfInt;
 
 public class ListNode {
 
   public int val;
   public ListNode next;
 
-  public ListNode() {
-  }
+  public ListNode() {}
 
   public ListNode(int val) {
     this.val = val;
@@ -25,6 +26,7 @@ public class ListNode {
 
   public void printNode() {
     printNode(this);
+    System.out.println("=========== ");
   }
 
   private void printNode(ListNode node) {
@@ -36,16 +38,14 @@ public class ListNode {
 
   public static ListNode buildNode(int[] array) {
 
-    ListNode head = new ListNode(array[0]);;
-    ListNode dummyHead = new ListNode(0);
-    dummyHead.next = head;
-
-    for (int i = 1; i < array.length; i++) {
-      if (head.next == null) {
-        head.next = new ListNode(array[i]);
-        head = head.next;
-      }
+    OfInt iterator = Arrays.stream(array).iterator();
+    ListNode head = new ListNode(0);
+    ListNode cap = head;
+    while (iterator.hasNext()) {
+      Integer i = iterator.next();
+      head.next = new ListNode(i);
+      head = head.next;
     }
-    return dummyHead.next;
+    return cap.next;
   }
 }
