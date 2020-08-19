@@ -1,4 +1,4 @@
-package leecode.arraylist;
+package leecode.hashtable;
 
 import java.util.HashMap;
 import java.util.Map;
