@@ -1,5 +1,7 @@
 package leecode.arraylist;
 
+import leecode.common.ListNode;
+
 public class RemoveLastNode {
 
   public static void main(String[] args) {
@@ -9,16 +11,16 @@ public class RemoveLastNode {
     ListNode node3 = new ListNode(3);
     ListNode node4 = new ListNode(4);
     ListNode node5 = new ListNode(5);
-    node1.next = node2;
-    node2.next = node3;
-    node3.next = node4;
-    node4.next = node5;
+    node1.next(node2);
+    node2.next(node3);
+    node3.next(node4);
+    node4.next(node5);
 
     printListNode(node1);
 
     Solution solution = new Solution();
     ListNode dummy = new ListNode(520);
-    dummy.next = node1;
+    dummy.next(node1);
 
     ListNode listNode = solution.removeNthFromEnd(dummy, 2);
     printListNode(listNode);
@@ -26,7 +28,6 @@ public class RemoveLastNode {
   }
 
   private static void printListNode(ListNode listNode) {
-    System.out.println("listNode = " + listNode.val);
     if (listNode.next != null) {
       printListNode(listNode.next);
     }
@@ -47,7 +48,7 @@ public class RemoveLastNode {
         slow = slow.next;
       }
 
-      slow.next = slow.next.next;
+      slow.next = (slow.next.next);
 
       return head;
     }
