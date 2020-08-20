@@ -37,7 +37,7 @@ public class LinkedListCycleTest {
   @Test
   public void test() {
     LinkedListCycle sol = new LinkedListCycle();
-    boolean b = sol.hasCycle(testNode);
-    System.out.println("b = " + b);
+    boolean cycleListNode = sol.hasCycle(testNode);
+    System.out.println("is cycle = " + cycleListNode);
   }
 }

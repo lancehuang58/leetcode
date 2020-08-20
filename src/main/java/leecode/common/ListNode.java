@@ -2,10 +2,12 @@ package leecode.common;
 
 import java.util.Arrays;
 import java.util.PrimitiveIterator.OfInt;
+import java.util.StringJoiner;
 
 public class ListNode {
 
   public int val;
+
   public ListNode next;
 
   public ListNode() {}
@@ -24,16 +26,25 @@ public class ListNode {
     return this;
   }
 
-  public void printNode() {
-    printNode(this);
-    System.out.println("=========== ");
+  public ListNode last() {
+    ListNode t = this;
+    while (t.next != null) {
+      t = t.next;
+    }
+    return t;
   }
 
-  private void printNode(ListNode node) {
-    System.out.println("node.val = " + node.val);
-    if (node.next != null) {
-      printNode(node.next);
+  public String toArrayString() {
+    ListNode t = this;
+    StringJoiner joiner = new StringJoiner(",\t");
+
+    joiner.add(String.valueOf(t.val));
+
+    while (t.next != null) {
+      joiner.add(String.valueOf(t.next.val));
+      t = t.next;
     }
+    return joiner.toString();
   }
 
   public static ListNode buildNode(int[] array) {
