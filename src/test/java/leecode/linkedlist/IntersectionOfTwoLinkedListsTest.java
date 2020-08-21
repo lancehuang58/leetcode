@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 //import leecode.common.ListNode;
 import leecode.common.ListNode;
+import org.hamcrest.core.Is;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,9 +29,7 @@ public class IntersectionOfTwoLinkedListsTest {
 
   @Test
   public void getIntersectionNode() {
-    System.out.println("listNode A = " + listNodeA.toArrayString());
-    System.out.println("listNode B = " + listNodeB.toArrayString());
     ListNode intersectionNode = solution.getIntersectionNode(listNodeA, listNodeB);
-    System.out.println("intersectionNode = " + intersectionNode.val);
+    assertThat(intersectionNode.val, Is.is(10));
   }
 }

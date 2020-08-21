@@ -38,6 +38,6 @@ public class LinkedListCycleTest {
   public void test() {
     LinkedListCycle sol = new LinkedListCycle();
     boolean cycleListNode = sol.hasCycle(testNode);
-    System.out.println("is cycle = " + cycleListNode);
+    assertTrue(cycleListNode);
   }
 }

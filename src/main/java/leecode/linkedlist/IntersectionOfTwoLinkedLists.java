@@ -38,11 +38,6 @@ public class IntersectionOfTwoLinkedLists {
         ListNode bPointer = nodeB;
 
         while (aPointer != bPointer) {
-          if (aPointer != null) System.out.printf("aPointer = " + aPointer.val + ",");
-
-          if (bPointer != null) System.out.println(" \tbPointer = " +  bPointer.val);
-
-          System.out.println("============================");
           if (aPointer == null) {
             aPointer = nodeB;
           } else {
