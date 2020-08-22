@@ -4,11 +4,6 @@ import leecode.common.ListNode;
 
 public class ReverseLinkedList {
 
-
-
-
-
-
   public ListNode reverseList(ListNode head) {
 
     ListNode temp;

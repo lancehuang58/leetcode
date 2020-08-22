@@ -41,11 +41,8 @@ public class SingleNumber {
     Integer result =
         bitmapSolution.apply(IntStream.of(INTEGER_ARRAY1).boxed().toArray(Integer[]::new));
 
-    System.out.println("result = " + result);
-
     Integer mapResult =
         mapSolution.apply(IntStream.of(INTEGER_ARRAY2).boxed().toArray(Integer[]::new));
 
-    System.out.println("mapResult = " + mapResult);
   }
 }
