@@ -34,12 +34,24 @@ public class ListNode {
     return t;
   }
 
+  public ListNode reverse() {
+    ListNode node = this;
+    ListNode temp;
+    ListNode previous = null;
+    while (node != null) {
+      temp = node.next;
+      node.next = previous;
+      previous = node;
+      node  = temp;
+    }
+
+    return previous;
+  }
+
   public String toArrayString() {
     ListNode t = this;
-    StringJoiner joiner = new StringJoiner(",\t");
-
+    StringJoiner joiner = new StringJoiner(",", "[", "]");
     joiner.add(String.valueOf(t.val));
-
     while (t.next != null) {
       joiner.add(String.valueOf(t.next.val));
       t = t.next;
