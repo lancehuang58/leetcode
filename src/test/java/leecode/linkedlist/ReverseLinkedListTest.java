@@ -1,11 +1,10 @@
 package leecode.linkedlist;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
-import java.util.List;
 import leecode.common.ListNode;
+import leecode.common.Wrapper;
 import org.hamcrest.core.Is;
-import org.junit.Before;
 import org.junit.Test;
 
 public class ReverseLinkedListTest {
@@ -21,6 +20,7 @@ public class ReverseLinkedListTest {
   public void test_reverse_node_self() {
     ListNode listNode = ListNode.buildNode(new int[]{1, 2, 3, 4, 5});
     ListNode reverse = listNode.reverse();
+    Wrapper.prettyPrintLinkedList(reverse);
     assertThat(reverse.toArrayString(), Is.is("[5,4,3,2,1]"));
   }
 }
