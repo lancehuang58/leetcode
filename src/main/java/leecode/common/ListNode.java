@@ -59,6 +59,20 @@ public class ListNode {
     return joiner.toString();
   }
 
+  public void prettyPrintLinkedList() {
+    ListNode node = this;
+    while (node != null && node.next != null) {
+      System.out.print(node.val + "->");
+      node = node.next;
+    }
+
+    if (node != null) {
+      System.out.println(node.val);
+    } else {
+      System.out.println("Empty LinkedList");
+    }
+  }
+
   public static ListNode buildNode(int[] array) {
 
     OfInt iterator = Arrays.stream(array).iterator();

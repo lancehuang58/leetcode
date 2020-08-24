@@ -20,7 +20,6 @@ public class ReverseLinkedListTest {
   public void test_reverse_node_self() {
     ListNode listNode = ListNode.buildNode(new int[]{1, 2, 3, 4, 5});
     ListNode reverse = listNode.reverse();
-    Wrapper.prettyPrintLinkedList(reverse);
     assertThat(reverse.toArrayString(), Is.is("[5,4,3,2,1]"));
   }
 }
