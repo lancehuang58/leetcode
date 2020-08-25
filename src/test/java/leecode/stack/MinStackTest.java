@@ -8,25 +8,18 @@ import org.junit.Test;
 
 public class MinStackTest {
 
-  MinStack stack;
-
-  @Before
-  public void setUp() throws Exception {
-    stack = new MinStack();
-  }
-
   @Test
-  public void given_zero_value_and_pop_from_stack_then_return_null() {
-//    stack.push(1);
-//    stack.push(2);
-//    stack.push(3);
-//    int top = stack.top();
-//    System.out.println("top = " + top);
-//    stack.pop();
-//    top = stack.top();
-//    System.out.println("top = " + top);
-//    stack.pop();
-//    top = stack.top();
-//    System.out.println("top = " + top);
+  public void given_normal_test_data_and_return_success() {
+    MinStack minStack = new MinStack();
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-3);
+    int min = minStack.getMin(); // return -3
+    assertThat(min, Is.is(-3));
+    minStack.pop();
+    min = minStack.top(); // return 0
+    assertThat(min, Is.is(0));
+    min = minStack.getMin(); // return -2
+    assertThat(min, Is.is(-2));
   }
 }
