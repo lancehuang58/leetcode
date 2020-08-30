@@ -3,7 +3,6 @@ package leecode.linkedlist;
 import static org.junit.Assert.assertThat;
 
 import leecode.common.ListNode;
-import leecode.common.Wrapper;
 import org.hamcrest.core.Is;
 import org.junit.Test;
 

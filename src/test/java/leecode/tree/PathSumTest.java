@@ -2,7 +2,6 @@ package leecode.tree;
 
 import static org.junit.Assert.*;
 
-import java.util.TreeMap;
 import leecode.common.TreeNode;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +11,7 @@ public class PathSumTest {
   PathSum solution;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp(){
     solution = new PathSum();
   }
 

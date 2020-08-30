@@ -1,7 +1,5 @@
 package leecode.arraylist;
 
-import static org.junit.Assert.*;
-
 import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Before;

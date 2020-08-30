@@ -2,7 +2,6 @@ package leecode.linkedlist;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
 import leecode.common.ListNode;
 import org.hamcrest.core.Is;
 import org.junit.Before;
@@ -12,7 +11,7 @@ public class RemoveLinkedListElementTest {
   RemoveLinkedListElement solution;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     solution = new RemoveLinkedListElement();
   }
 

@@ -1,9 +1,7 @@
 package leecode.tree;
 
-import static org.junit.Assert.*;
 
 import leecode.common.TreeNode;
-import org.junit.Before;
 import org.junit.Test;
 
 public class ConvertSortedArrayToBSTTest {

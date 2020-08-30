@@ -1,8 +1,5 @@
 package leecode.hashtable;
 
-import static org.junit.Assert.*;
-
-import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +9,7 @@ public class ValidAnagramTest {
   ValidAnagram validAnagram;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp(){
     validAnagram = new ValidAnagram();
   }
 

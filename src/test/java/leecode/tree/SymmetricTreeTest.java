@@ -3,7 +3,6 @@ package leecode.tree;
 import static org.junit.Assert.*;
 
 import leecode.common.TreeNode;
-import leecode.common.Wrapper;
 import org.junit.Test;
 
 public class SymmetricTreeTest {
