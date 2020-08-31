@@ -4,9 +4,9 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.BiFunction;
-import leecode.common.ListNode;
 
-public class IntersectionOfTwoLinkedLists {
+
+public class IntersectionOfTwoLinkedLists  {
 
   BiFunction<ListNode, ListNode, ListNode> MapStrategy =
       (nodeA, nodeB) -> {
@@ -61,4 +61,6 @@ public class IntersectionOfTwoLinkedLists {
   public ListNode getIntersectionNode(ListNode nodeA, ListNode nodeB) {
     return TwoPointerStrategy.apply(nodeA, nodeB);
   }
+
+
 }

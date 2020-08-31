@@ -3,7 +3,6 @@ package leecode.linkedlist;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Function;
-import leecode.common.ListNode;
 
 public class LinkedListCycle {
 

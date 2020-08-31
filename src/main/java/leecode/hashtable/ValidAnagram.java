@@ -6,10 +6,10 @@ import java.util.Map;
 public class ValidAnagram {
 
   public boolean isAnagram(String s, String t) {
-    return tranditionalway(s, t);
+    return traditional(s, t);
   }
 
-  private boolean tranditionalway(String s, String t) {
+  private boolean traditional(String s, String t) {
     Map<Character, Integer> charCountMap = getCharCountMap(s.toCharArray());
     char[] chars = t.toCharArray();
     for (char c : chars) {
@@ -27,7 +27,7 @@ public class ValidAnagram {
     return charCountMap.isEmpty();
   }
 
-  private boolean compareWith2Map(String s, String t) {
+  public boolean compareWith2Map(String s, String t) {
     char[] chars = s.toCharArray();
     char[] chart = t.toCharArray();
     Map<Character, Integer> charMaps = getCharCountMap(chars);

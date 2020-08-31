@@ -1,6 +1,5 @@
 package leecode.linkedlist;
 
-import leecode.common.ListNode;
 
 public class ReverseLinkedList {
 

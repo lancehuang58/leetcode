@@ -2,7 +2,6 @@ package leecode.linkedlist;
 
 import static org.junit.Assert.*;
 
-import leecode.common.ListNode;
 import org.junit.Before;
 import org.junit.Test;
 
