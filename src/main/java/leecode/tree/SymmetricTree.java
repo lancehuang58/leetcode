@@ -20,6 +20,6 @@ public class SymmetricTree {
     if (node2.val != node1.val) {
       return false;
     }
-    return isMirror(node1.right, node2.left) || isMirror(node2.left, node1.right);
+    return isMirror(node1.right, node2.left) && isMirror(node2.left, node1.right);
   }
 }
