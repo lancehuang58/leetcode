@@ -34,7 +34,7 @@ public class SymmetricTreeTest {
     TreeNode leftNode = new TreeNode(2, TreeNode.of(3), TreeNode.of(4));
     TreeNode rightNode = new TreeNode(2, TreeNode.of(4), TreeNode.of(3));
     TreeNode root = new TreeNode(1, leftNode, rightNode);
-    BTreePrinter.printNode(root);
+//    BTreePrinter.printNode(root);
     boolean symmetric = solution.isSymmetric(root);
     assertTrue(symmetric);
   }
@@ -44,7 +44,7 @@ public class SymmetricTreeTest {
     TreeNode leftNode = new TreeNode(2, null, TreeNode.of(3));
     TreeNode rightNode = new TreeNode(2, null, TreeNode.of(3));
     TreeNode root = new TreeNode(1, leftNode, rightNode);
-    BTreePrinter.printNode(root);
+//    BTreePrinter.printNode(root);
     boolean symmetric = solution.isSymmetric(root);
     assertFalse(symmetric);
   }

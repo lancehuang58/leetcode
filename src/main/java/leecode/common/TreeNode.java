@@ -17,6 +17,13 @@ public class TreeNode {
     this.right = right;
   }
 
+  @Override
+  public String toString() {
+    return "TreeNode{" +
+        "val=" + val +
+        '}';
+  }
+
   public static TreeNode of(int i) {
     return new TreeNode(i);
   }

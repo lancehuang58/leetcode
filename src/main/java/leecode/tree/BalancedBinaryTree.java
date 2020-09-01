@@ -4,24 +4,24 @@ import leecode.common.TreeNode;
 
 public class BalancedBinaryTree {
 
-  public boolean isBalanced(TreeNode root) {
-    if (root == null) {
+  public boolean isBalanced(TreeNode node) {
+    if (node == null) {
       return true;
     }
-    return getHight(root) != -1;
+
+    int rightTreeDiff = getDiff(node.right);
+    int leftTreeDiff = getDiff(node.left);
+    int diff = Math.abs(rightTreeDiff - leftTreeDiff);
+    if (diff > 1) {
+      return false;
+    }
+    return isBalanced(node.right) && isBalanced(node.left);
   }
 
-  private int getHight(TreeNode node) {
-    if (node.left == null && node.right == null) {
+  private int getDiff(TreeNode node) {
+    if (node == null) {
       return 0;
     }
-
-    int left = getHight(node.left);
-    int right = getHight(node.right);
-
-    if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
-      return -1;
-    }
-    return Math.max(left, right) + 1;
+    return 1 + Math.max(getDiff(node.left), getDiff(node.right));
   }
 }

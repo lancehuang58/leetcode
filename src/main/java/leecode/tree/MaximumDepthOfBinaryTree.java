@@ -6,18 +6,15 @@ import leecode.common.TreeNode;
 public class MaximumDepthOfBinaryTree {
 
   public int maxDepth(TreeNode root) {
-    if (Objects.isNull(root)) {
+    if (root == null) {
       return 0;
+    }
+    int rightChildDepth = maxDepth(root.right);
+    int leftChildDepth = maxDepth(root.left);
+    if (rightChildDepth >= leftChildDepth) {
+      return rightChildDepth + 1;
     } else {
-      int result = 1;
-      int r_depth = maxDepth(root.right);
-      int l_depth = maxDepth(root.left);
-
-      if (l_depth >= r_depth) {
-        return result + l_depth;
-      } else {
-        return result + r_depth;
-      }
+      return leftChildDepth + 1;
     }
   }
 }

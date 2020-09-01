@@ -12,7 +12,7 @@ public class ConvertSortedArrayToBSTTest {
   @Test
   public void sortedArrayToBST() {
     TreeNode treeNode = solution.sortedArrayToBST(new int[]{1, 2, 3, 4, 5});
-    BTreePrinter.printNode(treeNode);
+//    BTreePrinter.printNode(treeNode);
 
   }
 }
