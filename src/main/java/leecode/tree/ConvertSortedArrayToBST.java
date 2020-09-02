@@ -6,18 +6,30 @@ public class ConvertSortedArrayToBST {
 
   public TreeNode sortedArrayToBST(int[] nums) {
 
-    return buildBST(nums, 0, nums.length - 1);
-  }
-
-  private TreeNode buildBST(int[] nums, int start, int end) {
-    if (start > end) {
+    if (nums == null || nums.length == 0) {
       return null;
     }
-    int mid = (start + end) / 2;
-    TreeNode node = TreeNode.of(nums[mid]);
 
-    node.left = buildBST(nums, start, mid - 1);
-    node.right = buildBST(nums, mid + 1, end);
+    TreeNode node = buildBinarySearchTree(nums, 0, nums.length - 1);
+    return node;
+  }
+
+  private TreeNode buildBinarySearchTree(int[] nums, int l, int r) {
+
+    if (l > r) {
+      return null;
+    }
+
+    int midIndex = l + (r - l) / 2;
+    System.out.println("======================= ");
+    System.out.println("midIndex = " + midIndex);
+
+    int num = nums[midIndex];
+    TreeNode node = TreeNode.of(num);
+    System.out.println("num = " + num);
+    System.out.println("======================= ");
+    node.left = buildBinarySearchTree(nums, l, midIndex - 1);
+    node.right = buildBinarySearchTree(nums, midIndex + 1, r);
     return node;
   }
 
