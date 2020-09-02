@@ -1,31 +1,32 @@
 package leecode.hashtable;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class TwoSum {
 
-  static Integer[] INTEGER_ARRAY = {2, 3, 4, 7};
-
-  public static void main(String[] args) {
-
-    int target = 11;
-
-    Map<Integer, Integer> cacheIndexMap = new HashMap<>();
-
-    for (int index = 0; index < INTEGER_ARRAY.length; index++) {
-      int current = INTEGER_ARRAY[index];
-      int complement = target - current;
-
-      if (cacheIndexMap.containsKey(complement)) {
-        System.out.println(String.format("array[%d]=%d ", index, current));
-        System.out
-            .println(String.format("array[%d]=%d ", cacheIndexMap.get(complement), complement));
+  BiFunction<List<Integer>, Integer, List<Integer>> simple = (nums, target) -> {
+    for (int i = 0; i < nums.size(); i++) {
+      for (int j = i + 1; j < nums.size(); j++) {
+        int valueNeedToFind = target - nums.get(i);
+        if (nums.get(j) == valueNeedToFind) {
+          return Arrays.asList(i, j);
+        }
       }
-      cacheIndexMap.put(current, index);
     }
+    return null;
+  };
 
-
+  public int[] twoSum(int[] nums, int target) {
+    List<Integer> result = simple
+        .apply(IntStream.of(nums).boxed().collect(Collectors.toList()), target);
+    if (result == null) {
+      return null;
+    }
+    int[] array = result.stream().mapToInt(i -> i).toArray();
+    return array;
   }
-
 }
