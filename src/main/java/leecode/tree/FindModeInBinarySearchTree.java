@@ -1,41 +1,49 @@
 package leecode.tree;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import leecode.common.TreeNode;
 
 public class FindModeInBinarySearchTree {
 
+  int count = 0;
+  int max = 0;
+  int lookFor = 0;
+  List<Integer> list = new ArrayList<>();
+
   public int[] findMode(TreeNode root) {
-    if (root == null) {
-      return new int[] {};
+    if (root != null) {
+      traverse(root);
     }
-
-    Map<Integer, Integer> countingMap = new HashMap<>();
-    helper(root, countingMap);
-    Integer max = countingMap.values().stream().mapToInt(v -> v).max().getAsInt();
-
-    Iterator<Entry<Integer, Integer>> iterator = countingMap.entrySet().iterator();
-    List<Integer> list = new LinkedList<>();
-    while (iterator.hasNext()) {
-      Entry<Integer, Integer> next = iterator.next();
-      if (next.getValue() == max) {
-        list.add(next.getKey());
-      }
-    }
-    return list.stream().mapToInt(i -> i).toArray();
+    return list.stream().mapToInt(x -> x).toArray();
   }
 
-  private void helper(TreeNode root, Map<Integer, Integer> countingMap) {
+  private void traverse(TreeNode root) {
+
+    if (root.left != null) {
+      traverse(root.left);
+    }
+
     if (root == null) {
       return;
     }
-    countingMap.merge(root.val, 1, Integer::sum);
-    helper(root.right, countingMap);
-    helper(root.left, countingMap);
+
+    if (root.val == lookFor) {
+      count++;
+    } else {
+      lookFor = root.val;
+      count = 1;
+    }
+
+    if (count >= max) {
+      if (count > max) {
+        list.clear();
+        max = count;
+      }
+      list.add(root.val);
+    }
+    if (root.right != null) {
+      traverse(root.right);
+    }
   }
 }
