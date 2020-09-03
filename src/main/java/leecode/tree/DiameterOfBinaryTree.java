@@ -4,32 +4,24 @@ import leecode.common.TreeNode;
 
 public class DiameterOfBinaryTree {
 
-  public int diameterOfBinaryTree(TreeNode root) {
-    //root
-    if (root == null) {
-      return 0;
+  int maxLength = 0;
+
+  public int diTree(TreeNode node) {
+    if (node != null) {
+      if (node.left == null && node.right == null) {
+        return 0;
+      }
+      int leftTreeLength = diTree(node.left) + 1;
+      int rightTreeLength = diTree(node.right) + 1;
+      maxLength = Math.max(maxLength, rightTreeLength + leftTreeLength);
+      return Math.max(leftTreeLength, rightTreeLength);
     }
 
-    //leaf node
-    if (root.left == null && root.right == null) {
-      return 0;
-    }
-
-    int rightDiameter = maxDepth(root.right);
-    int leftDiameter = maxDepth(root.left);
-    return rightDiameter + leftDiameter;
+    return -1;
   }
 
-  public int maxDepth(TreeNode root) {
-    if (root == null) {
-      return 0;
-    }
-
-    if (root.left == null && root.right == null) {
-      return 1;
-    }
-
-    return Math.max(maxDepth(root.right), maxDepth(root.left)) + 1;
-
+  public int diameterOfBinaryTree(TreeNode root) {
+    diTree(root);
+    return maxLength;
   }
 }

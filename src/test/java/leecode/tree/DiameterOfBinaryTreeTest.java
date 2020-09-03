@@ -23,7 +23,7 @@ public class DiameterOfBinaryTreeTest {
   }
 
   @Test
-  public void givne_2_node_tree_then_get_diameter_of_tree_and_return_0() {
+  public void given_2_node_tree_then_get_diameter_of_tree_and_return_0() {
     int i = solution.diameterOfBinaryTree(new TreeNode(1, TreeNode.of(2), null));
     assertThat(i, Is.is(1));
   }
