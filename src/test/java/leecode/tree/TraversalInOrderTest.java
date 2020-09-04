@@ -13,7 +13,7 @@ public class TraversalInOrderTest {
   public void traverse_in_order() {
     TreeNode treeNode = new ConvertSortedArrayToBST()
         .sortedArrayToBST(new int[]{1, 2, 3, 4, 5, 5, 6, 6, 7, 7, 7});
-//    BTreePrinter.printNode(treeNode);
+    BTreePrinter.printNode(treeNode);
     strategy.traverse(treeNode);
 
   }
