@@ -33,7 +33,7 @@ public class BinaryTreePathTest {
   @Test
   public void given_multiple_node_tree_and_then_return_5_element_list() {
     TreeNode treeNode = new ConvertSortedArrayToBST().sortedArrayToBST(new int[] {1, 2, 3, 4, 5});
-    BTreePrinter.printNode(treeNode);
+//    BTreePrinter.printNode(treeNode);
     List<String> strings = solution.binaryTreePaths(treeNode);
     assertThat(strings.get(0), Is.is("3->1->2"));
     assertThat(strings.get(1), Is.is("3->4->5"));
