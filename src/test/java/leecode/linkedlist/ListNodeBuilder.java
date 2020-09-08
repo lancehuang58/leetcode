@@ -5,7 +5,6 @@ import java.util.PrimitiveIterator.OfInt;
 
 public class ListNodeBuilder {
 
-
   public static ListNode buildNode(int[] array) {
 
     OfInt iterator = Arrays.stream(array).iterator();

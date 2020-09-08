@@ -24,7 +24,7 @@ public class BinaryTreeTiltTest {
   @Test
   public void given_multiple_node_tree_then_return_5() {
     TreeNode treeNode = new TreeNode(1, TreeNode.of(3), TreeNode.of(2));
-//    BTreePrinter.printNode(treeNode);
+    //    BTreePrinter.printNode(treeNode);
     int tilt = solution.findTilt(treeNode);
     assertThat(tilt, Is.is(1));
   }

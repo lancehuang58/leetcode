@@ -16,11 +16,10 @@ public class SumOfLeftLeavesTest {
     assertThat(i, Is.is(0));
   }
 
-
   @Test
   public void givne_multiple_node_tree_then_return_sum_of_left_leaves() {
-    TreeNode treeNode = new ConvertSortedArrayToBST()
-        .sortedArrayToBST(new int[]{1, 2, 3, 4, 6, 5, 7, 1});
+    TreeNode treeNode =
+        new ConvertSortedArrayToBST().sortedArrayToBST(new int[] {1, 2, 3, 4, 6, 5, 7, 1});
     int sumOfLeftLeaves = solution.sumOfLeftLeaves(treeNode);
     assertThat(sumOfLeftLeaves, Is.is(7));
   }

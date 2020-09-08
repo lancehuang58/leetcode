@@ -6,8 +6,7 @@ public class ListNode {
 
   ListNode next;
 
-  ListNode() {
-  }
+  ListNode() {}
 
   public ListNode(int val) {
     this.val = val;

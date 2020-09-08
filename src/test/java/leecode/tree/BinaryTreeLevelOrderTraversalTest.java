@@ -19,6 +19,8 @@ public class BinaryTreeLevelOrderTraversalTest {
   }
 
   /**
+   *
+   *
    * <pre> [3,9,20,null,null,15,7],
    *       3
    *      / \
@@ -26,23 +28,24 @@ public class BinaryTreeLevelOrderTraversalTest {
    *       /  \
    *      15   7
    * </pre>
+   *
    * [ [15,7], [9,20], [3] ]
    */
   @Test
   public void given_tree_node_and_test_order() {
     TreeNode node20 = new TreeNode(20, TreeNode.of(15), TreeNode.of(7));
     TreeNode root = new TreeNode(3, TreeNode.of(9), node20);
-//    BTreePrinter.printNode(root);
+    //    BTreePrinter.printNode(root);
     List<List<Integer>> r = solution.levelOrderBottom(root);
-//    System.out.println("r = " + r);
+    //    System.out.println("r = " + r);
     assertThat(r.get(0), Is.is(Arrays.asList(15, 7)));
     assertThat(r.get(1), Is.is(Arrays.asList(9, 20)));
     assertThat(r.get(2), Is.is(Arrays.asList(3)));
   }
 
-
   /**
    * [1,2,3,4,null,null,5]
+   *
    * <pre>
    *       1
    *      / \
@@ -57,11 +60,11 @@ public class BinaryTreeLevelOrderTraversalTest {
     TreeNode node3 = new TreeNode(3, null, TreeNode.of(5));
 
     TreeNode root = new TreeNode(1, node2, node3);
-//    BTreePrinter.printNode(root);
+    //    BTreePrinter.printNode(root);
     List<List<Integer>> r = solution.levelOrderBottom(root);
-//    System.out.println("r = " + r);
-    assertThat(r.get(0), Is.is(Arrays.asList(4,5)));
-    assertThat(r.get(1), Is.is(Arrays.asList(2,3)));
+    //    System.out.println("r = " + r);
+    assertThat(r.get(0), Is.is(Arrays.asList(4, 5)));
+    assertThat(r.get(1), Is.is(Arrays.asList(2, 3)));
     assertThat(r.get(2), Is.is(Arrays.asList(1)));
   }
 }

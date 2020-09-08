@@ -24,8 +24,8 @@ public class MinimumDepthOfBinaryTreeTest {
 
   @Test
   public void given_multiple_nodes_and_then_return_2() {
-    int minDepth = solution
-        .minDepth(new TreeNode(1, TreeNode.of(2), new TreeNode(3, null, TreeNode.of(4))));
+    int minDepth =
+        solution.minDepth(new TreeNode(1, TreeNode.of(2), new TreeNode(3, null, TreeNode.of(4))));
     assertThat(minDepth, Is.is(2));
   }
 }

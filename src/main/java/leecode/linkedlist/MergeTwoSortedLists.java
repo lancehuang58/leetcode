@@ -2,7 +2,6 @@ package leecode.linkedlist;
 
 public class MergeTwoSortedLists {
 
-
   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
     if (l1 == null && l2 == null) {
@@ -22,6 +21,5 @@ public class MergeTwoSortedLists {
     } else {
       return new ListNode(l2.val, mergeTwoLists(l1, l2.next));
     }
-
   }
 }

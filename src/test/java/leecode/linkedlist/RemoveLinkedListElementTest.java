@@ -16,7 +16,7 @@ public class RemoveLinkedListElementTest {
 
   @Test
   public void removeElements() {
-    ListNode listNode = ListNodeBuilder.buildNode(new int[] {1,4,3,2,5,2});
+    ListNode listNode = ListNodeBuilder.buildNode(new int[] {1, 4, 3, 2, 5, 2});
     ListNode listNode1 = solution.removeElements(listNode, 3);
     assertThat(ListNodePrinter.toArrayString(listNode1), Is.is("[1,4,2,5,2]"));
   }

@@ -1,6 +1,5 @@
 package leecode.stack;
 
-
 public class MinStack {
 
   private class LstNode {
@@ -16,9 +15,7 @@ public class MinStack {
 
   LstNode head;
 
-
-  public MinStack() {
-  }
+  public MinStack() {}
 
   public void push(int x) {
     LstNode temp = new LstNode(x);

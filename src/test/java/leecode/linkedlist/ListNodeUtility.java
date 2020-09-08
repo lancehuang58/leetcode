@@ -16,7 +16,7 @@ public class ListNodeUtility {
       temp = node.next;
       node.next = previous;
       previous = node;
-      node  = temp;
+      node = temp;
     }
 
     return previous;

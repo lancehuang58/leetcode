@@ -35,5 +35,4 @@ public class MinimumDepthOfBinaryTree {
     int right = helper(node.right) + 1;
     return Math.min(left, right);
   }
-
 }

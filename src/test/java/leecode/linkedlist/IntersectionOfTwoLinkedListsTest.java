@@ -21,7 +21,7 @@ public class IntersectionOfTwoLinkedListsTest {
 
     ListNodeUtility.last(listNode1).next = listNode3;
     ListNodeUtility.last(listNode2).next = listNode3;
-    listNodeA  = listNode1;
+    listNodeA = listNode1;
     listNodeB = listNode2;
   }
 

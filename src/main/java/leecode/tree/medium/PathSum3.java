@@ -17,7 +17,6 @@ public class PathSum3 {
     return iterator.getNumberOfMatch();
   }
 
-
   private static class TreeWalker {
 
     private final int target;
@@ -42,7 +41,6 @@ public class PathSum3 {
         traverse(node.right);
       }
     }
-
 
     private void eachNode(TreeNode node, List<Integer> elements) {
       if (node == null) {

@@ -25,11 +25,9 @@ public class PathSum3Test {
 
   @Test
   public void given_simple_tree_and_then_return_2() {
-    TreeNode treeNode = new ConvertSortedArrayToBST()
-        .sortedArrayToBST(new int[]{1, 2, 3, 4, 6, 5, 7, 1});
+    TreeNode treeNode =
+        new ConvertSortedArrayToBST().sortedArrayToBST(new int[] {1, 2, 3, 4, 6, 5, 7, 1});
     int i = solution.pathSum(treeNode, 9);
     assertThat(i, is(2));
-
   }
-
 }

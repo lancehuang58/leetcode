@@ -11,7 +11,7 @@ public class PathSumTest {
   PathSum solution;
 
   @Before
-  public void setUp(){
+  public void setUp() {
     solution = new PathSum();
   }
 
@@ -47,5 +47,4 @@ public class PathSumTest {
     boolean r = solution.hasPathSum(TreeNode.of(1), 10);
     assertFalse(r);
   }
-
 }

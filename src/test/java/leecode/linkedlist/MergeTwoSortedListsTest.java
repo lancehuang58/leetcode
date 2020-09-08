@@ -2,13 +2,10 @@ package leecode.linkedlist;
 
 import static org.junit.Assert.assertThat;
 
-
 import org.hamcrest.core.Is;
 import org.junit.Test;
 
-/**
- * Input: 1->2->4, 1->3->4 Output: 1->1->2->3->4->4
- */
+/** Input: 1->2->4, 1->3->4 Output: 1->1->2->3->4->4 */
 public class MergeTwoSortedListsTest {
 
   MergeTwoSortedLists process = new MergeTwoSortedLists();

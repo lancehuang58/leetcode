@@ -21,12 +21,10 @@ public class ClosestBinarySearchTreeValueTest {
     TreeNode root = new TreeNode(4, TreeNode.of(2), TreeNode.of(5));
     root.left.left = TreeNode.of(1);
     root.left.right = TreeNode.of(3);
-//    BTreePrinter.printNode(root);
+    //    BTreePrinter.printNode(root);
 
     int i = solution.closestValue(root, 1.7);
 
     assertThat(i, Is.is(2));
   }
-
-
 }

@@ -30,8 +30,8 @@ public class MaximumDepthOfBinaryTreeTest {
 
   @Test
   public void given_3_node_the_return_3() {
-    int maxDepth = solution
-        .maxDepth(new TreeNode(1, new TreeNode(2, TreeNode.of(3), TreeNode.of(4)), null));
+    int maxDepth =
+        solution.maxDepth(new TreeNode(1, new TreeNode(2, TreeNode.of(3), TreeNode.of(4)), null));
     assertThat(maxDepth, Is.is(3));
   }
 }

@@ -1,7 +1,3 @@
 package leecode.arraylist;
 
-
-public class RemoveLastNode {
-
-
-}
+public class RemoveLastNode {}

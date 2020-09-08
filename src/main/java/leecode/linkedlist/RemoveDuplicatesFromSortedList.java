@@ -1,6 +1,5 @@
 package leecode.linkedlist;
 
-
 public class RemoveDuplicatesFromSortedList {
 
   public ListNode deleteDuplicates(ListNode head) {

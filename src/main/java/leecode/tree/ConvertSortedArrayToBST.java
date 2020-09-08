@@ -26,5 +26,4 @@ public class ConvertSortedArrayToBST {
     node.right = buildBinarySearchTree(nums, midIndex + 1, r);
     return node;
   }
-
 }

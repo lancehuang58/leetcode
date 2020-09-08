@@ -9,7 +9,7 @@ public class ValidAnagramTest {
   ValidAnagram validAnagram;
 
   @Before
-  public void setUp(){
+  public void setUp() {
     validAnagram = new ValidAnagram();
   }
 

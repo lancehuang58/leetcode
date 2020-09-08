@@ -29,13 +29,15 @@ public class PalindromeLinkedListTest {
 
   @Test
   public void given_sunny_case_return_true() {
-    boolean r = solution.isPalindrome(ListNodeBuilder.buildNode(new int[] {1, 2, 3, 4, 4, 3, 2, 1}));
+    boolean r =
+        solution.isPalindrome(ListNodeBuilder.buildNode(new int[] {1, 2, 3, 4, 4, 3, 2, 1}));
     assertTrue(r);
   }
 
   @Test
   public void given_sunny_case2_return_true() {
-    boolean r = solution.isPalindrome(ListNodeBuilder.buildNode(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 1}));
+    boolean r =
+        solution.isPalindrome(ListNodeBuilder.buildNode(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 1}));
     assertTrue(r);
   }
 }
