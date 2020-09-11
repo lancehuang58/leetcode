@@ -6,6 +6,10 @@ public class ListNodePrinter {
 
   public static String toArrayString(ListNode node) {
 
+    if (node == null) {
+      return "node is null";
+    }
+
     StringJoiner joiner = new StringJoiner(",", "[", "]");
     joiner.add(String.valueOf(node.val));
     while (node.next != null) {
