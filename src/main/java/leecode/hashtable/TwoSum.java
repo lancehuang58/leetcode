@@ -52,7 +52,7 @@ public class TwoSum {
       } else {
         return new int[]{head, rear};
       }
-    } while (head<rear);
+    } while (head < rear);
     throw new RuntimeException("can't find target index");
   };
 
@@ -69,6 +69,7 @@ public class TwoSum {
   }
 
   interface TwoSumStrategy {
+
     int[] findTwoSum(int[] numbers, int targetNumber);
   }
 }
