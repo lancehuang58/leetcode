@@ -1,16 +1,16 @@
 package leecode.tree;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import leecode.common.TreeNode;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class PathSumTest {
 
   PathSum solution;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     solution = new PathSum();
   }

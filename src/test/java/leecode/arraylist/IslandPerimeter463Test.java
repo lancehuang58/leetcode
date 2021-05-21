@@ -1,22 +1,17 @@
 package leecode.arraylist;
 
-import org.hamcrest.core.Is;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 public class IslandPerimeter463Test {
 
-  IslandPerimeter463 solution;
+  IslandPerimeter463 solution = new IslandPerimeter463();
 
-  @Before
-  public void init() {
-    solution = new IslandPerimeter463();
-  }
 
   @Test
   public void test() {
     int r = solution.islandPerimeter(Constant.ISLAND);
-    Assert.assertThat(r, Is.is(16));
+    assertThat(r).isEqualTo(16);
   }
 }

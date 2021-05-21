@@ -1,11 +1,10 @@
 package leecode.arraylist;
 
-import static org.junit.Assert.assertThat;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.stream.IntStream;
-
-import org.hamcrest.core.Is;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SingleNumberTest {
 
@@ -15,7 +14,7 @@ public class SingleNumberTest {
     Integer result =
         SingleNumber.bitmapSolution.apply(
             IntStream.of(INTEGER_ARRAY1).boxed().toArray(Integer[]::new));
-    assertThat(result, Is.is(5));
+    assertThat(result).isEqualTo(5);
   }
 
   @Test
@@ -24,6 +23,6 @@ public class SingleNumberTest {
     Integer mapResult =
         SingleNumber.mapSolution.apply(
             IntStream.of(INTEGER_ARRAY2).boxed().toArray(Integer[]::new));
-    assertThat(mapResult, Is.is(4));
+    assertThat(mapResult).isEqualTo(4);
   }
 }

@@ -1,8 +1,9 @@
 package leecode.arraylist;
 
-import org.hamcrest.core.Is;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 public class MaximumDistanceInArraysTest {
 
@@ -12,6 +13,6 @@ public class MaximumDistanceInArraysTest {
   public void test() {
     MaximumDistanceInArrays maximumDistanceInArrays = new MaximumDistanceInArrays();
     int result = maximumDistanceInArrays.maxDistance(array1);
-    Assert.assertThat(result, Is.is(4));
+    assertThat(result).isEqualTo(4);
   }
 }

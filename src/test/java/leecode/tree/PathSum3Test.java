@@ -1,11 +1,11 @@
 package leecode.tree;
 
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 import leecode.common.TreeNode;
 import leecode.tree.medium.PathSum3;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class PathSum3Test {
 
