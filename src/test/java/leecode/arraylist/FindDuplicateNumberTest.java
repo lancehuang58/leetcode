@@ -1,11 +1,10 @@
 package leecode.arraylist;
 
-import jdk.nashorn.internal.runtime.logging.Logger;
 import org.junit.jupiter.api.Test;
 
 import static leecode.arraylist.FindDuplicateNumber.find;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FindDuplicateNumberTest {
 
