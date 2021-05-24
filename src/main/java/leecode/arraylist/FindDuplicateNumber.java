@@ -1,8 +1,8 @@
 package leecode.arraylist;
 
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 
-@Log
+@Slf4j
 public class FindDuplicateNumber {
 
   public static int find(int[] array) {
@@ -23,7 +23,7 @@ public class FindDuplicateNumber {
   }
 
   private static void swap(int[] array, int i, int j) {
-    log.info(() -> String.format("swap %d %d", array[i], array[j]));
+    log.info("swap {} {}", array[i], array[j]);
     int tmp = array[i];
     array[i] = array[j];
     array[j] = tmp;
