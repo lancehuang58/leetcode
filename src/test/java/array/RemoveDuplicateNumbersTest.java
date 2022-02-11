@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 class RemoveDuplicateNumbersTest {
     RemoveDuplicates processor = new RemoveDuplicates();
 
-    // @Test
-    // void give_empty_array_when_process_then_return_0() {
-    // Assertions.assertThat(processor.execute(new int[] {})).isZero();
-    // }
+    @Test
+    void give_empty_array_when_process_then_return_0() {
+        Assertions.assertThat(processor.execute(new int[] {})).isZero();
+    }
 
     // @Test
     // void given_array_when_find_max_number_location_then_return_2() {
