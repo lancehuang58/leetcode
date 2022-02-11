@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class RemoveDuplicateNumbersTest {
-    RemoveDuplicates processor = new RemoveDuplicates();
+    RemoveDuplicateNumbers processor = new RemoveDuplicateNumbers();
 
     @Test
     void give_empty_array_when_process_then_return_0() {

@@ -1,6 +1,6 @@
 package array;
 
-public class RemoveDuplicates {
+public class RemoveDuplicateNumbers {
 
   public int execute(int[] numbers) {
 
