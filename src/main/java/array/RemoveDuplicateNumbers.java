@@ -4,8 +4,9 @@ public class RemoveDuplicateNumbers {
 
   public int execute(int[] numbers) {
 
-    if (numbers.length == 0)
+    if (numbers.length == 0) {
       return 0;
+    }
 
     int i = 0;
 
