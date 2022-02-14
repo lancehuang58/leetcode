@@ -17,8 +17,6 @@ public class ArrayIntersection {
                 .collect(groupingBy(Function.identity(),
                         collectingAndThen(counting(), Long::intValue)));
 
-        System.out.println(map);
-
         LinkedList<Integer> queue = new LinkedList<>();
 
         Arrays.stream(array)
