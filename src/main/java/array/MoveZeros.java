@@ -10,15 +10,13 @@ public class MoveZeros {
     int temp;
 
     while (right < nums.length) {
-      if (nums[right] == 0) {
-        ++right;
-      } else {
+      if (nums[right] != 0) {
         temp = nums[left];
         nums[left] = nums[right];
         nums[right] = temp;
         ++left;
-        ++right;
       }
+      ++right;
     }
   }
 }
