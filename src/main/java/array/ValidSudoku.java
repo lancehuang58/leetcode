@@ -34,8 +34,8 @@ public class ValidSudoku {
       }
     }
     for (Map.Entry<Integer, List<String>> next : map.entrySet()) {
-      String[] sectionElements = next.getValue().toArray(new String[0]);
-      if (isDuplicate(sectionElements)) {
+      String[] strings = next.getValue().toArray(new String[0]);
+      if (isDuplicate(strings)) {
         return false;
       }
     }
