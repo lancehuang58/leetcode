@@ -1,39 +1,34 @@
 package string;
 
-import java.util.stream.Collector;
+import static java.lang.Character.isLetterOrDigit;
 
 public class ValidPalindrome {
+
   public boolean isPalindrome(String s) {
+
     if (s == null || s.isEmpty()) {
       return true;
     }
 
-    s =
-        s.toLowerCase()
-            .chars()
-            .filter(x -> (x >= 97 && x <= 122) || (x>=48 && x<=57))
-            .mapToObj(c -> (char) c)
-            .collect(
-                Collector.of(
-                    StringBuilder::new,
-                    StringBuilder::append,
-                    StringBuilder::append,
-                    StringBuilder::toString));
+    s = s.toLowerCase();
+    int right = s.length() - 1;
+    int left = 0;
 
-    if (s.length() == 1) {
-      return true;
-    }
+    while (left <= right) {
+      char leftChar = s.charAt(left);
+      char rightChar = s.charAt(right);
 
-    int n = s.length() / 2;
-    int front = 0;
-    int end = s.length() - 1;
-
-    for (int i = 0; i < n; i++) {
-      if (s.charAt(front) != s.charAt(end)) {
-        return false;
+      if (!isLetterOrDigit(leftChar)) {
+        left++;
+      } else if (!isLetterOrDigit(rightChar)) {
+        right--;
+      } else {
+        if (leftChar != rightChar) {
+          return false;
+        }
+        left++;
+        right--;
       }
-      front++;
-      end--;
     }
 
     return true;
