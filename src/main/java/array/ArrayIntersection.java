@@ -9,7 +9,7 @@ import static java.util.stream.Collectors.*;
 
 public class ArrayIntersection {
 
-    public int[] getIntersction(int[] num1, int[] num2) {
+    public int[] getInterSection(int[] num1, int[] num2) {
         int[] store = num1.length > num2.length ? num1 : num2;
         int[] array = num1.length > num2.length ? num2 : num1;
 
