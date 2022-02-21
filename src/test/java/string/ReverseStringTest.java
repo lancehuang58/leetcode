@@ -3,11 +3,9 @@ package string;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ReverseStringTest {
 
-  char[] chars = new char[] {'a', 'b', 'c'};
+  char[] chars = new char[] { 'a', 'b', 'c' };
 
   ReverseString processor = new ReverseString();
 
