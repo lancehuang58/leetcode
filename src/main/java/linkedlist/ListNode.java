@@ -1,28 +1,15 @@
 package linkedlist;
 
+import java.util.*;
+import java.util.logging.Logger;
+
 public class ListNode {
   int val;
   ListNode next;
+  Logger logger = Logger.getLogger(getClass().getSimpleName());
 
   public ListNode(int val) {
     this.val = val;
-  }
-
-  public int getVal() {
-    return val;
-  }
-
-  public ListNode setNext(ListNode next) {
-    this.next = next;
-    return this;
-  }
-
-  public ListNode getNext() {
-    return next;
-  }
-
-  public boolean hasNext() {
-    return next != null;
   }
 
   public static ListNode of(Integer... values) {
@@ -35,7 +22,7 @@ public class ListNode {
         head = current;
       } else {
         ListNode listNode = new ListNode(values[i]);
-        current.setNext(listNode);
+        current.next = listNode;
         current = listNode;
       }
       i++;
@@ -44,14 +31,18 @@ public class ListNode {
   }
 
   public void print() {
-    System.out.print(val);
+
+    logger.info(Arrays.toString(values()));
   }
 
-  public void printAll() {
-    print();
-    if (this.hasNext()) {
-      System.out.print(",");
-      next.printAll();
+  public int[] values() {
+    List<Integer> list = new ArrayList<>();
+    ListNode current = this;
+
+    while (current != null) {
+      list.add(current.val);
+      current = current.next;
     }
+    return list.stream().mapToInt(i -> i).toArray();
   }
 }

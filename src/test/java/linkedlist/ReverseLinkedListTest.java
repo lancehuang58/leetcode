@@ -10,6 +10,6 @@ class ReverseLinkedListTest {
   void test_revers_list() {
     ListNode node = ListNode.of(1, 2, 3, 4, 5);
     ListNode listNode = processor.reverseList(node);
-    listNode.printAll();
+    listNode.print();
   }
 }
