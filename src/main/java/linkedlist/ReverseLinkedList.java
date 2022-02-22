@@ -3,8 +3,10 @@ package linkedlist;
 public class ReverseLinkedList {
 
   public ListNode reverseList(ListNode head) {
-    //declare nodes previous/current/next
-    ListNode current = head, previous = null, next = null;
+    // declare nodes previous/current/next
+    ListNode current = head;
+    ListNode previous = null;
+    ListNode next;
     while (current != null) {
       //1.get next cached
       next = current.next;

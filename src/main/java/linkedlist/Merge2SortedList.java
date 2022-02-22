@@ -2,6 +2,7 @@ package linkedlist;
 
 import java.util.Objects;
 import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 
 public class Merge2SortedList {
 
@@ -19,7 +20,7 @@ public class Merge2SortedList {
         }
       });
 
-  BiFunction<ListNode, ListNode, ListNode> iteratorFunction =
+  BinaryOperator<ListNode> iteratorFunction =
       (list1, list2) -> {
         ListNode dummy = new ListNode(-1);
         ListNode head = dummy;
@@ -46,7 +47,16 @@ public class Merge2SortedList {
         return dummy.next;
       };
 
-  public ListNode merge(ListNode list1, ListNode list2) {
-    return iteratorFunction.apply(list1, list2);
+  public ListNode merge(ListNode l1, ListNode l2) {
+    if (l1 == null) return l2;
+    if (l2 == null) return l1;
+
+    if (l1.val < l2.val) {
+      l1.next = merge(l1.next, l2);
+      return l1;
+    } else {
+      l2.next = merge(l2.next, l1);
+      return l2;
+    }
   }
 }
