@@ -12,7 +12,7 @@ class BinaryTreeLevelOrderTraversalTest {
   @Test
   void levelOrder() {
     TreeNode root = TreeUtil.treeByArray(3, 9, 20, null, null, 15, 7);
-    TreeUtil.print(root);
+    // TreeUtil.print(root);
     List<List<Integer>> lists = processor.levelOrder(root);
     Assertions.assertThat(lists).isNotEmpty();
   }

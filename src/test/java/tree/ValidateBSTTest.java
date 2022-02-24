@@ -3,7 +3,6 @@ package tree;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 class ValidateBSTTest {
   ValidateBST processor = new ValidateBST();
 
@@ -22,15 +21,15 @@ class ValidateBSTTest {
   @Test
   void test_validate_bst_3() {
     TreeNode treeNode = TreeUtil.treeByArray(5, 1, 4, null, null, 3, 6);
-    TreeUtil.print(treeNode);
+    // TreeUtil.print(treeNode);
     boolean result = processor.isValidBST(treeNode);
     Assertions.assertThat(result).isFalse();
   }
 
   @Test
   void test_validate_bst_4() {
-    TreeNode treeNode = TreeUtil.treeByArray(5, 4,6, null, null, 3, 7);
-    TreeUtil.print(treeNode);
+    TreeNode treeNode = TreeUtil.treeByArray(5, 4, 6, null, null, 3, 7);
+    // TreeUtil.print(treeNode);
     boolean result = processor.isValidBST(treeNode);
     Assertions.assertThat(result).isFalse();
   }

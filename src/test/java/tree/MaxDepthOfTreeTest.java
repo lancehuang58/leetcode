@@ -9,7 +9,7 @@ class MaxDepthOfTreeTest {
   @Test
   void test_find_max_depth_from_tree() {
     TreeNode root = TreeUtil.treeByArray(3, 9, 20, null, null, 15, 7);
-    TreeUtil.print(root);
+    // TreeUtil.print(root);
     int r = processor.maxDepth(root);
     Assertions.assertThat(r).isEqualTo(3);
   }
