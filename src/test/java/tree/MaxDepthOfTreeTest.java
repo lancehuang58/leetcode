@@ -1,12 +1,16 @@
 package tree;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class MaxDepthOfTreeTest {
+  MaxDepthOfTree processor = new MaxDepthOfTree();
 
   @Test
-  void test_build_tree() {
-    final TreeNode root = TreeNode.of(1, 2, 3, 4, 5, 6, 7,8,9,10);
-    root.print();
+  void test_find_max_depth_from_tree() {
+    TreeNode root = TreeUtil.treeByArray(3, 9, 20, null, null, 15, 7);
+    TreeUtil.print(root);
+    int r = processor.maxDepth(root);
+    Assertions.assertThat(r).isEqualTo(3);
   }
 }
