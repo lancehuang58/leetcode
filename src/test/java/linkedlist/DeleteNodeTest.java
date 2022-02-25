@@ -13,5 +13,6 @@ class DeleteNodeTest {
     ListNode node1 = head.next.next;
     processor.deleteNode(node1);
     // head.print();
+
   }
 }

@@ -31,8 +31,7 @@ public class ListNode {
   }
 
   public void print() {
-
-    logger.info(Arrays.toString(values()));
+    logger.info(() -> " list elements " + Arrays.toString(values()));
   }
 
   public int[] values() {
