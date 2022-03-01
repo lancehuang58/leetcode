@@ -22,6 +22,14 @@ public class BinaryTreeLevelOrderTraversal {
 
     collection.merge(level, new ArrayList<>(), (k, v) -> {v.add(root.val);return v;});
 
+//    if (!collection.containsKey(level)) {
+//      List<Integer> l = new ArrayList<>();
+//      l.add(root.val);
+//      collection.put(level, l);
+//    } else {
+//      collection.get(level).add(root.val);
+//    }
+
     level++;
     if (root.right != null) traverse(root.right, level, collection);
   }
