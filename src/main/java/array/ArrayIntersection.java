@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.function.Function;
 
+import static java.util.function.Function.*;
 import static java.util.stream.Collectors.*;
 
 public class ArrayIntersection {
@@ -14,8 +15,7 @@ public class ArrayIntersection {
         int[] array = num1.length > num2.length ? num2 : num1;
 
         Map<Integer, Integer> map = Arrays.stream(store).boxed()
-                .collect(groupingBy(Function.identity(),
-                        collectingAndThen(counting(), Long::intValue)));
+                .collect(groupingBy(identity(), collectingAndThen(counting(), Long::intValue)));
 
         LinkedList<Integer> queue = new LinkedList<>();
 
