@@ -10,11 +10,21 @@ public class BubbleSortTest {
     @Test
     void test_sort() {
 
-        int[] nums = new int[] { 6, 5, 9, 7, 2, 8 };
+        int[] nums = new int[]{6, 5, 9, 7, 2, 8};
 
         sort.execute(nums);
 
-        Assertions.assertThat(nums).containsExactly(new int[] { 2, 5, 6, 7, 8, 9 });
+        Assertions.assertThat(nums).containsExactly(2, 5, 6, 7, 8, 9);
+
+    }
+
+    @Test
+    void _test_sort_2() {
+        int[] nums = new int[]{1,2,3,4,5};
+
+        sort.execute(nums);
+
+        Assertions.assertThat(nums).containsExactly(1,2,3,4,5);
 
     }
 
