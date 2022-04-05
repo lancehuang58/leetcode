@@ -9,7 +9,7 @@ public class ShellSort {
         for (; gap > 0; gap = gap / 2) {
             for (i = gap; i < nums.length; i++) {
                 temp = nums[i];
-                for (j = i; j >= gap && temp < nums[j - gap]; j -= gap) {
+                for (j = i; j >= gap && temp < nums[j - gap]; j = j - gap) {
                     nums[j] = nums[j - gap];
                 }
                 nums[j] = temp;
