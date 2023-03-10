@@ -18,15 +18,21 @@ public class FizzBuzz {
         public List<String> fizzBuzz(int n) {
             List<String> result = new ArrayList<>();
             for (int i = 1; i < n + 1; i++) {
-                if (divisibleBy3.test(i) && divisibleBy5.test(i)) {
-                    result.add("FizzBuzz");
-                } else if (divisibleBy3.test(i)) {
-                    result.add("Fizz");
-                } else if (divisibleBy5.test(i)) {
-                    result.add("Buzz");
-                } else {
-                    result.add(String.valueOf(i));
+                StringBuilder builder = new StringBuilder();
+
+                if (divisibleBy3.test(i)) {
+                    builder.append("Fizz");
                 }
+
+                if (divisibleBy5.test(i)) {
+                    builder.append("Buzz");
+                }
+
+                if (builder.isEmpty()) {
+                    builder.append(i);
+                }
+
+                result.add(builder.toString());
             }
             return result;
         }
