@@ -1,5 +1,9 @@
 package array;
 
+/**
+ * Time Complexity: O(n x m)
+ * Space Complexity: O(1)
+ */
 public class RichestCustomerWealth {
 
     public static class Solution {
