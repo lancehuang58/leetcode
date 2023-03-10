@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 /**
  * Time Complexity: O(n x m)
  * Space Complexity: O(1)
@@ -8,15 +10,14 @@ public class RichestCustomerWealth {
 
     public static class Solution {
 
-        public int maximumWealth(int[][] account) {
+        public int maximumWealth(int[][] accounts) {
+
             int max = 0;
-            for (int x = 0; x < account.length; x++) {
-                int sumOfUserAccount = 0;
-                for (int j = 0; j < account[x].length; j++) {
-                    sumOfUserAccount += account[x][j];
-                }
-                max = Math.max(max, sumOfUserAccount);
+
+            for (int[] account : accounts) {
+                max = Math.max(max, Arrays.stream(account).sum());
             }
+
             return max;
         }
     }
