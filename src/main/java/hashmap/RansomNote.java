@@ -16,21 +16,14 @@ public class RansomNote {
 
         public boolean canConstruct(String ransomNote, String magazine) {
             Map<String, Integer> map = Arrays.stream(magazine.split(""))
-                    .collect(
-                            groupingBy(identity(),
-                                    collectingAndThen(counting(), Long::intValue)));
+                    .collect(groupingBy(identity(), collectingAndThen(counting(), Long::intValue)));
             String[] nodeChars = ransomNote.split("");
 
             for (String c : nodeChars) {
                 if (!map.containsKey(c)) {
                     return false;
                 }
-
-                map.computeIfPresent(c, ((key, value) -> {
-                    value--;
-                    return value;
-                }));
-
+                map.computeIfPresent(c, ((key, value) -> --value));
                 if (map.containsValue(-1))
                     return false;
             }
