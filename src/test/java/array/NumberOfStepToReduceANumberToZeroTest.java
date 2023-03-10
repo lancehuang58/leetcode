@@ -12,4 +12,10 @@ public class NumberOfStepToReduceANumberToZeroTest {
         int i = solution.numberOfSteps(14);
         assertThat(i).isEqualTo(6);
     }
+
+    @Test
+    void test_solution2() {
+        int i = solution.numberOfStep2(14);
+        assertThat(i).isEqualTo(6);
+    }
 }
