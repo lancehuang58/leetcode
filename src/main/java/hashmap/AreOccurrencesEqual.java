@@ -9,6 +9,7 @@ import java.util.Set;
 
 @Slf4j
 public class AreOccurrencesEqual {
+
   static class Solution {
 	public boolean areOccurrencesEqual(String s) {
 	  Map<Character, Integer> map = new HashMap<>();
